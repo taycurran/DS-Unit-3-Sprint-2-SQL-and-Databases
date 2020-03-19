@@ -1,8 +1,9 @@
 import psycopg2
 from dotenv import load_dotenv
 import os
-load_dotenv()
 
+# Load Environment Variables
+load_dotenv()
 DB_NAME = os.getenv("DB_NAME", default="OOPS")
 DB_USER = os.getenv("DB_USER", default="OOPS")
 DB_PASSWORD = os.getenv("DB_PASSWORD", default="OOPS")
@@ -32,35 +33,3 @@ finally:
         cursor.close()
         connection.close()
         print("PostgreSQL connection is closed.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# ### Connect to ElephantSQL-hosted PostgreSQL
-# conn = psycopg2.connect(dbname='TODO', 
-#                         user='TODO',
-#                         password='TODO', 
-#                         host='baasu.db.elephantsql.com')
-
-# ### A "cursor", a structure to iterate over db records to perform queries
-# cur = conn.cursor()
-
-# ### An example query
-# cur.execute('SELECT * from test_table;')
-
-# ### Note - nothing happened yet! We need to actually *fetch* from the cursor
-# cur.fetchone()
-
-# psycopg2.connect()
