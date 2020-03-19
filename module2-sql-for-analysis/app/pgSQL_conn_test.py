@@ -1,8 +1,10 @@
 import psycopg2
+from psycopg2 import Error
 from dotenv import load_dotenv
 import os
 
 # Load Environment Variables
+# Set Error Message to OPPS so its easy to identify
 load_dotenv()
 DB_NAME = os.getenv("DB_NAME", default="OOPS")
 DB_USER = os.getenv("DB_USER", default="OOPS")
